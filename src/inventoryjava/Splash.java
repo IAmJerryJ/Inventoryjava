@@ -27,59 +27,60 @@ public class Splash extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        Myprogress = new javax.swing.JProgressBar();
-        jLabel2 = new javax.swing.JLabel();
-        Percentage = new javax.swing.JLabel();
+        title = new javax.swing.JLabel();
+        myVariable = new javax.swing.JProgressBar();
+        smallTitle = new javax.swing.JLabel();
+        percentage = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel1.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel1.setText("Warehouse Manage System");
+        title.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
+        title.setForeground(new java.awt.Color(255, 0, 0));
+        title.setText("Warehouse Manage System");
 
-        Myprogress.setBackground(new java.awt.Color(204, 204, 204));
-        Myprogress.setForeground(new java.awt.Color(255, 0, 0));
+        myVariable.setBackground(new java.awt.Color(204, 204, 204));
+        myVariable.setForeground(new java.awt.Color(255, 0, 0));
 
-        jLabel2.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel2.setText("WMS");
+        smallTitle.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
+        smallTitle.setForeground(new java.awt.Color(255, 0, 0));
+        smallTitle.setText("WMS");
 
-        Percentage.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
-        Percentage.setForeground(new java.awt.Color(255, 0, 0));
-        Percentage.setText("%");
+        percentage.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
+        percentage.setForeground(new java.awt.Color(255, 0, 0));
+        percentage.setText("%");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Myprogress, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(myVariable, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(215, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
+                        .addComponent(title)
                         .addGap(181, 181, 181))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel2)
+                        .addComponent(smallTitle)
                         .addGap(326, 326, 326))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(Percentage)
+                        .addComponent(percentage)
                         .addGap(344, 344, 344))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(177, 177, 177)
-                .addComponent(jLabel1)
+                .addComponent(title)
                 .addGap(53, 53, 53)
-                .addComponent(jLabel2)
+                .addComponent(smallTitle)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 99, Short.MAX_VALUE)
-                .addComponent(Percentage)
+                .addComponent(percentage)
                 .addGap(32, 32, 32)
-                .addComponent(Myprogress, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(myVariable, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -106,22 +107,24 @@ public class Splash extends javax.swing.JFrame {
            for(int i = 0; i <= 100 ; i++)
            {
                Thread.sleep(40);
-               MysSplash.Myprogress.setValue(i);
-               MysSplash.Percentage.setText(Integer.valueOf(i) + "%");
+               MysSplash.myVariable.setValue(i);
+               MysSplash.percentage.setText(Integer.valueOf(i) + "%");
            }
        }catch(Exception e)
        {
            
        }
-       new Login().setVisible(true);
+       Login login = new Login();
+       login.setLocation(MysSplash.getLocation());
+       login.setVisible(true);
        MysSplash.dispose();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JProgressBar Myprogress;
-    private javax.swing.JLabel Percentage;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JProgressBar myVariable;
+    private javax.swing.JLabel percentage;
+    private javax.swing.JLabel smallTitle;
+    private javax.swing.JLabel title;
     // End of variables declaration//GEN-END:variables
 }
